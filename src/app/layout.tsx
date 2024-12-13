@@ -1,14 +1,17 @@
-import React from 'react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Providers } from './providers'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'NextUI Exemplo',
-  description: 'Exemplo de aplicação Next.js com NextUI',
+  title: {
+    template: '%s | Meu Projeto',
+    default: 'Meu Projeto',
+  },
+  description: 'Um projeto Next.js moderno e eficiente',
+  viewport: 'width=device-width, initial-scale=1',
+  themeColor: '#ffffff',
 }
 
 export default function RootLayout({
@@ -17,12 +20,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className="light" suppressHydrationWarning>
-      <head />
-      <body className={`${inter.className} min-h-screen bg-background`}>
-        <Providers>
-          {children}
-        </Providers>
+    <html lang="pt-BR">
+      <body className={inter.className}>
+        {children}
       </body>
     </html>
   )
