@@ -1,15 +1,16 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { Providers } from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Meu Projeto',
-    default: 'Meu Projeto',
+    template: '%s | ChatGPT Clone',
+    default: 'ChatGPT Clone',
   },
-  description: 'Um projeto Next.js moderno e eficiente',
+  description: 'Um clone do ChatGPT usando Next.js e NextUI',
   viewport: 'width=device-width, initial-scale=1',
   themeColor: '#ffffff',
 }
@@ -21,8 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>
-        {children}
+      <body className={`${inter.className} min-h-screen bg-background`}>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   )
