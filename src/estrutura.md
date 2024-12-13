@@ -4,83 +4,62 @@
 
 ### `/src`
 
-Raiz do código fonte do projeto
+- **Propósito**: Raiz do código fonte
+- **Subdiretórios**:
+  - `/app`: Páginas e rotas (Next.js App Router)
+  - `/modules`: Módulos funcionais da aplicação
+  - `/shared`: Código compartilhado entre módulos
+
+### `/src/modules`
+
+- **Propósito**: Separação por domínios funcionais
+- **Subdiretórios**:
+  - `/auth`: Autenticação e autorização
+    - `/components`
+    - `/hooks`
+    - `/services`
+    - `/types`
+    - `/utils`
+  - `/upload`: Gerenciamento de uploads
+    - `/components`
+    - `/hooks`
+    - `/services`
+    - `/types`
+    - `/utils`
+  - `/user`: Gestão de usuários
+    - `/components`
+    - `/hooks`
+    - `/services`
+    - `/types`
+    - `/utils`
+
+### `/src/shared`
+
+- **Propósito**: Código reutilizável entre módulos
+- **Subdiretórios**:
+  - `/components`: Componentes base reutilizáveis
+    - `/ui`: Componentes básicos (Button, Input, etc)
+    - `/layout`: Componentes de estrutura
+    - `/data-display`: Componentes de exibição
+  - `/hooks`: Hooks genéricos
+  - `/services`: Serviços compartilhados
+  - `/utils`: Funções utilitárias
+    - `/formatters`
+    - `/validators`
+    - `/platform`
+  - `/styles`: Estilos globais
+  - `/types`: Tipos TypeScript comuns
+  - `/constants`: Constantes globais
+  - `/config`: Configurações da aplicação
 
 ### `/src/app`
 
-- **Propósito**: Páginas e rotas da aplicação (App Router do Next.js)
-- **Conteúdo**:
-  - `layout.tsx`: Layout principal da aplicação
-  - `page.tsx`: Página inicial
-  - `(routes)/`: Subdiretórios para diferentes rotas
-  - `error.tsx`: Componente de tratamento de erros
-  - `loading.tsx`: Componente de loading global
-
-### `/src/components`
-
-- **Propósito**: Componentes reutilizáveis da interface
+- **Propósito**: Páginas e rotas Next.js
 - **Subdiretórios**:
-  - `/ui`: Componentes básicos de UI (botões, inputs, cards)
-  - `/layout`: Componentes de estrutura (header, footer, sidebar)
-  - `/forms`: Componentes relacionados a formulários
-  - `/modals`: Componentes de modais e diálogos
-  - `/data-display`: Componentes para exibição de dados (tabelas, listas)
-
-### `/src/hooks`
-
-- **Propósito**: Custom hooks reutilizáveis
-- **Conteúdo**:
-  - Hooks para gerenciamento de estado
-  - Hooks para lógica de negócio
-  - Hooks para interações com APIs
-
-### `/src/services`
-
-- **Propósito**: Serviços e integrações
-- **Conteúdo**:
-  - Chamadas de API
-  - Serviços de autenticação
-  - Integrações com terceiros
-
-### `/src/utils`
-
-- **Propósito**: Funções utilitárias
-- **Subdiretórios**:
-  - `/formatters`: Funções de formatação
-  - `/validators`: Funções de validação
-  - `/helpers`: Funções auxiliares gerais
-
-### `/src/types`
-
-- **Propósito**: Tipos TypeScript compartilhados
-- **Conteúdo**:
-  - Interfaces
-  - Types
-  - Enums
-
-### `/src/constants`
-
-- **Propósito**: Constantes e configurações
-- **Conteúdo**:
-  - Valores fixos
-  - Configurações
-  - Textos estáticos
-
-### `/src/styles`
-
-- **Propósito**: Estilos globais e temas
-- **Conteúdo**:
-  - Configurações do Tailwind
-  - Variáveis CSS globais
-  - Temas e tokens de design
-
-### `/src/context`
-
-- **Propósito**: Contextos do React
-- **Conteúdo**:
-  - Providers
-  - Store global
-  - Gerenciamento de estado compartilhado
+  - `/api`: Rotas da API
+  - `/(routes)`: Rotas da aplicação
+  - `/layout.tsx`: Layout principal
+  - `/page.tsx`: Página inicial
 
 ## Arquivos de Configuração
 
