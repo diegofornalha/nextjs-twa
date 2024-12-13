@@ -26,7 +26,7 @@
 ├── postcss.config.mjs   # Configuração do PostCSS
 ├── README.md           # Documentação principal
 ├── tailwind.config.ts  # Configuração do Tailwind CSS
-└── tsconfig.json       # Configura��ão do TypeScript
+└── tsconfig.json       # Configuração do TypeScript
 ```
 
 ## Explicação dos Arquivos
@@ -58,6 +58,15 @@
 ### Controle de Versão
 
 - `.gitignore`: Arquivos e pastas ignorados pelo Git
+
+#### Arquivos e Pastas Ignorados
+
+- `temp-setup/`: Arquivos temporários de configuração
+- `node_modules/`: Dependências do projeto
+- `.next/`: Build do Next.js
+- `.env`: Variáveis de ambiente
+- `*.log`: Arquivos de log
+- `.DS_Store`: Arquivos do sistema macOS
 
 ## Observações
 
