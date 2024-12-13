@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import { Button } from 'shared/components/ui/Button';
 
 export function Upload() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -14,10 +15,7 @@ export function Upload() {
 
   const handleUpload = async () => {
     if (!selectedFile) return;
-
-    // Aqui você implementará a lógica de upload
-    // Por exemplo, usando FormData e fetch para uma API local
-    console.log('Arquivo selecionado:', selectedFile.name);
+    // Implementação do upload
   };
 
   return (
@@ -28,13 +26,13 @@ export function Upload() {
         onChange={handleFileSelect}
         className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"
       />
-      <button
+      <Button 
         onClick={handleUpload}
         disabled={!selectedFile}
-        className="px-4 py-2 bg-violet-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+        variant="primary"
       >
         Fazer Upload
-      </button>
+      </Button>
     </div>
   );
 } 

@@ -1,75 +1,52 @@
 # Estrutura do Projeto
 
-## Diretórios Principais
-
-### `/src`
+## Diretório `/src`
 
 - **Propósito**: Raiz do código fonte
 - **Subdiretórios**:
-  - `/app`: Páginas e rotas (Next.js App Router)
-  - `/modules`: Módulos funcionais da aplicação
-  - `/shared`: Código compartilhado entre módulos
+  - `/@types`: Definições de tipos TypeScript (env.d.ts)
+  - `/app`: Páginas e rotas Next.js
+    - `layout.tsx`: Layout principal
+    - `page.tsx`: Página inicial
+  - `/components`: Componentes reutilizáveis
+    - `/ui`: Componentes base (Button.tsx)
+  - `/constants`: Constantes globais (config.ts)
+  - `/hooks`: Hooks personalizados (useLocalStorage.ts)
+  - `/modules`: Módulos funcionais
+    - `/upload`: Módulo de upload
+      - `/components`: Upload.tsx
+      - `/services`: uploadService.ts
+  - `/shared`: Código compartilhado
+    - `/components/ui`: Componentes base (Button.tsx)
+  - `/styles`: Estilos globais (globals.css)
 
-### `/src/modules`
+### Organização de Tipos
 
-- **Propósito**: Separação por domínios funcionais
+- `/@types`: Contém definições globais de tipos
+  - `env.d.ts`: Tipos para variáveis de ambiente
+- Tipos específicos junto aos seus módulos
+
+### `/modules/upload`
+
+- **Propósito**: Funcionalidade de upload
+- **Arquivos**:
+  - `/components/Upload.tsx`: Componente de upload
+  - `/services/uploadService.ts`: Serviço de upload
+
+### `/shared`
+
+- **Propósito**: Código reutilizável
 - **Subdiretórios**:
-  - `/auth`: Autenticação e autorização
-    - `/components`
-    - `/hooks`
-    - `/services`
-    - `/types`
-    - `/utils`
-  - `/upload`: Gerenciamento de uploads
-    - `/components`
-    - `/hooks`
-    - `/services`
-    - `/types`
-    - `/utils`
-  - `/user`: Gestão de usuários
-    - `/components`
-    - `/hooks`
-    - `/services`
-    - `/types`
-    - `/utils`
-
-### `/src/shared`
-
-- **Propósito**: Código reutilizável entre módulos
-- **Subdiretórios**:
-  - `/components`: Componentes base reutilizáveis
-    - `/ui`: Componentes básicos (Button, Input, etc)
-    - `/layout`: Componentes de estrutura
-    - `/data-display`: Componentes de exibição
-  - `/hooks`: Hooks genéricos
+  - `/components/ui`: Componentes base
+    - `Button.tsx`: Componente de botão
   - `/services`: Serviços compartilhados
-  - `/utils`: Funções utilitárias
-    - `/formatters`
-    - `/validators`
-    - `/platform`
-  - `/styles`: Estilos globais
-  - `/types`: Tipos TypeScript comuns
-  - `/constants`: Constantes globais
-  - `/config`: Configurações da aplicação
 
-### `/src/app`
+### `/app`
 
 - **Propósito**: Páginas e rotas Next.js
-- **Subdiretórios**:
-  - `/api`: Rotas da API
-  - `/(routes)`: Rotas da aplicação
-  - `/layout.tsx`: Layout principal
-  - `/page.tsx`: Página inicial
-
-## Arquivos de Configuração
-
-### Na Raiz
-
-- `next.config.js`: Configuração do Next.js
-- `tailwind.config.ts`: Configuração do Tailwind CSS
-- `tsconfig.json`: Configuração do TypeScript
-- `.env.example`: Template para variáveis de ambiente
-- `.gitignore`: Arquivos ignorados pelo Git
+- **Arquivos**:
+  - `layout.tsx`: Layout principal da aplicação
+  - `page.tsx`: Página inicial
 
 ## Boas Práticas
 
@@ -79,6 +56,7 @@
 - Nomes claros e descritivos
 - Agrupamento por funcionalidade
 - Manter hierarquia plana quando possível
+- Tipos próximos ao código que os utiliza
 
 ### Importações
 
